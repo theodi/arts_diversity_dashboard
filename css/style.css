@@ -1,0 +1,59 @@
+.navbar, .footer-content {
+	display: none;
+}
+text {
+	font: 12px sans-serif;
+}
+svg {
+	display: block;
+}
+#chart1, svg {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+}
+#files li {
+	float: left;
+	list-style: none;
+        text-align: center;
+        background-color: #00b7ff;
+        margin-right: 30px;
+	width: 120px;
+        line-height: 20px;
+	padding: 10px;
+	height: 40px;
+	color: white;
+        margin-bottom: 10px;
+	font-size: 0.8em;
+}
+#files li a {
+	color: white;
+        text-decoration: none;
+}
+#chart1 svg {
+	width: 80%;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#sidebar {
+	width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+}
+#credit {
+	float: right;
+	padding-right: 10px;
+}
+#odi-logo {
+	padding-left: 10px;
+	height: 40px;
+}
+#footer {
+	padding-top: 10px;
+	font-size: 0.8em;
+}
+#credit a {
+	text-decoration: underline;
+}
