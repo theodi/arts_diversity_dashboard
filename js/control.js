@@ -1,3 +1,4 @@
+var fileIds = [];
 $( document ).ready(function() {
 	$.get("data/files.txt", function(data) {
 		var lines = data.split("\n");
@@ -6,16 +7,27 @@ $( document ).ready(function() {
 				continue;
 			}
 			title = lines[i];
-			title = title.replace(/_/g," ");
 			title = title.replace(".csv","");
+			fileId = title;
+			fileIds.push(fileId);
+			title = title.replace(/_/g," ");
 			title = capitalizeFirstLetter(title);
 			if (title != "") {
-				$('#files').append('<li onClick="loadData(\'data/'+lines[i]+'\');"><a href="#files">' + title + '</a></li>');
+				$('#files').append('<li id="'+fileId+'" onClick="loadData(\'data/'+lines[i]+'\',\''+fileId+'\');"><a href="#files">' + title + '</a></li>');
 			}
 		}
 	});
 	loadData("data/sex.csv");
 });
+
+function resetClass(fileId) {
+	for (id in fileIds) {
+		if (fileIds[id] != fileId) {
+			$('#' + fileIds[id]).removeClass('selected');
+		}
+	}
+	$('#' + fileId).addClass('selected');
+}
 
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -56,7 +68,8 @@ function drawChart(data) {
     });
 }
 
-function loadData(file) {	
+function loadData(file,fileId) {
+	resetClass(fileId);	
 	var output = [];
 	var data = d3.csv(file, function(data) {
 		data.map(function(d) {
@@ -85,4 +98,4 @@ function loadData(file) {
 		drawChart(chartData);
 	});
 }
-loadData("data/sex.csv");
+loadData("data/sex.csv","sex");

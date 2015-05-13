@@ -27,6 +27,9 @@ svg {
         margin-bottom: 10px;
 	font-size: 0.8em;
 }
+#files li.selected {
+	background-color: #ff6700;
+}
 #files li a {
 	color: white;
         text-decoration: none;
