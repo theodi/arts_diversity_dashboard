@@ -15,7 +15,10 @@ function addPie(data,element) {
             .x(function(d) { return d.key })
             .y(function(d) { return d.y })
             .width(width)
-            .height(height);
+            .height(height)
+	    .showLabels(true)
+	    .labelType("percent")
+	    .color(["#1F77B4","#AEC7E8","#BDBDBD"]);
 
         d3.select("#" + element)
             .datum(data)
@@ -40,11 +43,11 @@ function ageBar() {
                 } ,
                 {
                     "label" : "25-34" ,
-                    "value" : 10
+                    "value" : 0.1
                 } ,
                 {
                     "label" : "35-44" ,
-                    "value" : 70
+                    "value" : 0.70
                 } ,
                 {
                     "label" : "45-54" ,
@@ -52,11 +55,11 @@ function ageBar() {
                 } ,
                 {
                     "label" : "55-64" ,
-                    "value" : 10
+                    "value" : 0.10
                 } ,
                 {
                     "label" : "Prefer not to say" ,
-                    "value" : 10
+                    "value" : 0.10
                 }
 		
 	    ]
@@ -75,12 +78,17 @@ function addBar(data,element) {
             .y(function(d) { return d.value })
             .staggerLabels(false)
             //.staggerLabels(historicalBarChart[0].values.length > 8)
+            .valueFormat(d3.format(".0f"))
             .tooltips(false)
             .showValues(true)
+            .valueFormat(d3.format(".0%"))
             .duration(250)
 	    .color(["#1F77B4"])
             .width(width)
             .height(height);
+
+        chart.yAxis
+	     .tickFormat(d3.format(".0%"));
 
         d3.select('#' + element)
             .datum(data)
@@ -99,7 +107,7 @@ function religionChart() {
 			"values": [
 			{ 
 				"label" : "No religion" ,
-				"value" : 50
+				"value" : 0.50
 			} , 
 			{ 
 				"label" : "Christian" ,
@@ -111,7 +119,7 @@ function religionChart() {
 			},
 			{ 
 				"label" : "Prefer not to say" ,
-				"value" : 50
+				"value" : 0.50
 			}
 		]
 	}
@@ -130,11 +138,12 @@ function addHorizontal(data,element) {
         .showValues(true)           //Show bar value next to each bar.
         .tooltips(true)             //Show tooltips on hover.
 	.showLegend(false)
+        .valueFormat(d3.format(".0%"))
 //        .transitionDuration(350)
         .showControls(false);        //Allow user to switch between "Grouped" and "Stacked" mode.
-
+        
     chart.yAxis
-        .tickFormat(d3.format(',.0f'));
+        .tickFormat(d3.format('.0%'));
 
     d3.select('#' + element)
         .datum(data)
@@ -154,15 +163,15 @@ function caringChart() {
 			"values": [
 			{ 
 				"label" : "Yes" ,
-				"value" : 30
+				"value" : 0.30
 			} , 
 			{ 
 				"label" : "No" ,
-				"value" : 50
+				"value" : 0.50
 			} , 
 			{ 
 				"label" : "Prefer not to say" ,
-				"value" : 20
+				"value" : 0.20
 			}
 		]
 	}
@@ -187,15 +196,15 @@ function ethnicChart() {
 			"values": [
 			{ 
 				"label" : "White British" ,
-				"value" : 60
+				"value" : 0.60
 			} , 
 			{ 
 				"label" : "Other" ,
-				"value" : 10
+				"value" : 0.10
 			} , 
 			{ 
 				"label" : "Prefer not to say" ,
-				"value" : 30
+				"value" : 0.30
 			}
 		]
 	}
@@ -211,15 +220,15 @@ function orientationBar() {
             values: [
                 {
                     "label" : "Hetrosexual" ,
-                    "value" : 60
+                    "value" : 0.60
                 } ,
                 {
                     "label" : "Gay/Lesbian" ,
-                    "value" : 10
+                    "value" : 0.10
                 } ,
                 {
                     "label" : "Bisexual" ,
-                    "value" : 10
+                    "value" : 0.10
                 } ,
                 {
                     "label" : "Other" ,
@@ -227,7 +236,7 @@ function orientationBar() {
                 } ,
                 {
                     "label" : "Prefer not to say" ,
-                    "value" : 20
+                    "value" : 0.20
                 }
 		
 	    ]
@@ -245,19 +254,19 @@ function schoolBar() {
             values: [
                 {
                     "label" : "UK State" ,
-                    "value" : 40
+                    "value" : 0.40
                 } ,
                 {
                     "label" : "UK Independent" ,
-                    "value" : 20
+                    "value" : 0.20
                 } ,
                 {
                     "label" : "Non-UK" ,
-                    "value" : 20
+                    "value" : 0.20
                 } ,
                 {
                     "label" : "Prefer not to say" ,
-                    "value" : 20
+                    "value" : 0.20
                 }
 	    ]
 	}
