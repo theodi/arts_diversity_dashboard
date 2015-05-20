@@ -106,10 +106,6 @@ function religionChart() {
 			"color": "#1F77B4",
 			"values": [
 			{ 
-				"label" : "No religion" ,
-				"value" : 0.50
-			} , 
-			{ 
 				"label" : "Christian" ,
 				"value" : 0
 			} , 
@@ -117,6 +113,10 @@ function religionChart() {
 				"label" : "Other" ,
 				"value" : 0
 			},
+			{ 
+				"label" : "No religion" ,
+				"value" : 0.50
+			} , 
 			{ 
 				"label" : "Prefer not to say" ,
 				"value" : 0.50
