@@ -60,3 +60,14 @@ svg {
 #credit a {
 	text-decoration: underline;
 }
+.item {
+	display: inline-block;
+	width: 500px;
+	height: 250px;
+}
+svg {
+	max-height: 200px;
+}
+.diversity_cont {
+	text-align: center;
+}
