@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Arts svgersity dashboard
-long_title: Arts svgersity dashbaord
+title: Arts diversity dashboard
+long_title: Arts diversity dashbaord
 link: /odi/
 weight: 1
 ---
