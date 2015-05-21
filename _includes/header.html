@@ -22,6 +22,16 @@
 <script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/control.js"></script>
 <script src="js/odi.js"></script>
+<script type="text/javascript">
+function navigateTo(sel, target, newWindow) {
+    var url = sel.options[sel.selectedIndex].value;
+    if (newWindow) {
+        window.open(url, target, '--- attributes here, see below ---');
+    } else {
+        window[target].location.href = url;
+    }
+}
+</script>
 </head>
 <body>
 <nav>
@@ -29,9 +39,6 @@
 		<div class='container'>
 			<div class='navbar-inner'>
 				<h1>{{ site.title }}</h1>
-				<a class='brand' href='/{{ page.category }}'>
-					<img alt="Logo" src="{{ site.url_root }}/img/logo.png" />
-				</a>
 			</div>
 		</div>
 	</div>
@@ -73,6 +80,17 @@
 	<header>
 		<div class='container'>
 			<h1>{{ page.long_title }}</h1>
+		<nav id="pageSelect">Page: <select onchange="navigateTo(this, 'window', false);">
+			{% for p in site.pages %}
+				{% assign current = page.link %}
+				{% assign url = p.url | remove:'/index.html' %}
+				{% if url == current %}
+				<option selected value="{{ site.url_root }}{{ p.url | remove: 'index.html' }}">{{ p.title }}</option>
+				{% else %}
+				<option value="{{ site.url_root }}{{ p.url | remove: 'index.html' }}">{{ p.title }}</option>
+				{% endif %}
+			{% endfor %}
+		</select></nav>
 		</div>
 	</header>
 

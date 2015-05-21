@@ -98,4 +98,4 @@ function loadData(file,fileId) {
 		drawChart(chartData);
 	});
 }
-loadData("data/sex.csv","sex");
+//loadData("data/sex.csv","sex");

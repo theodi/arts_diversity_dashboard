@@ -1,18 +1,46 @@
 ---
 layout: default
-title: Arts diversity dashboard
-long_title: Arts diversity dashbaord
+title: Diversity in DAC
+long_title: Diversity in DAC
 link: /
 weight: 1
 ---
 
-### Engagement with the arts
+### Diversity of artists in the ODI <a href="https://theodi.org/culture" target="_blank">Data as Culture</a> programme.
 
-Data is sourced from the UK Department for Culture Media & Sport.  <a href="https://www.gov.uk/government/statistics/taking-part-201415-quarter-3-statistical-release" target="_blank">Taking Part survey for 2014/15 quarter 3</a>
+### Total artists: &lt;50 | Response rate: 46%
 
-<nav id="sidebar">
-	<ul id="files">
-		
-	</ul>
-</nav>
-<div id="chart1"></div>
+<section id="container" class="svgersity_cont">
+	<section id="age_section" class="item">
+		<h3>Age</h3>
+		<svg id="age_chart"></svg>
+	</section>
+	<section id="caring_section" class="item">
+		<h3>Caring Responsibilities</h3>
+		<svg id="caring_chart"></svg>
+	</section>
+	<section id="disability_section" class="item">
+		<h3>Disability</h3>
+		<svg id="disability_chart"></svg>
+	</section>
+	<section id="gender_section" class="item">
+		<h3>Gender</h3>
+		<svg id="gender_chart"></svg>
+	</section>
+	<section id="ethnic_section" class="item">
+		<h3>Ethnic origin</h3>
+		<svg id="ethnic_chart"></svg>
+	</section>
+	<section id="religion_section" class="item">
+		<h3>Religion</h3>
+		<svg id="religion_chart"></svg>
+	</section>
+	<section id="sex_section" class="item">
+		<h3>Sexual orientation</h3>
+		<svg id="sex_chart"></svg>
+	</section>
+	<section id="class_section" class="item">
+		<h3>Education</h3>
+		<svg id="school_chart"></svg>
+	</section>
+</section>

@@ -1,43 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link href="css/nv.d3.css" rel="stylesheet" type="text/css">
-    <script src="js/d3.min.js" charset="utf-8"></script>
-    <script src="js/nv.d3.js"></script>
+---
+layout: default
+title: Access for hard of hearing
+long_title: Access for hard of hearing
+link: /hearing
+weight: 1
+---
+<p>Over the past year, have you had difficulty or been unable to do any of the activities listed below for reasons related to your hearing loss or deafness?</p>
+
+<p>5960 respondants</p>
+
+<p>Source: <a href="http://www.actiononhearingloss.org.uk/supporting-you/policy-research-and-influencing/research/annual-survey-of-members/annual-survey-2011.aspx" target="_blank">Action hearing loss annual report 2011</a> (the latest report as of May 2015)</p>
 
     <style>
-        text {
-            font: 12px sans-serif;
-        }
         svg {
             display: block;
             height: 650px;
             width: 650px;
+	    max-height: 650px;
+	    margin-left: auto;
+	    margin-right: auto;
         }
-        html, body {
-            margin: 0px;
-            padding: 0px;
-            height: 100%;
-            width: 100%;
-	    text-align: center;
-        }
- 	#test1 {
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#main {
-		width: 80%;
-		margin-left: auto;
-		margin-right: auto;
-	}
     </style>
-</head>
-<body class='with-3d-shadow with-transitions'>
-<section id="main">
-<h1>Over the past year, have you had difficulty or been unable to do any of
-the activities listed below for reasons related to your hearing loss or deafness? 5960 respondants</h1>
-<h2>Source: <a href="http://www.actiononhearingloss.org.uk/supporting-you/policy-research-and-influencing/research/annual-survey-of-members/annual-survey-2011.aspx" target="_blank">Action hearing loss annual report 2011</a> (the latest report as of May 2015)</h2>
 
 <svg id="test1" class="mypiechart"></svg>
 </section>
@@ -61,6 +44,7 @@ the activities listed below for reasons related to your hearing loss or deafness
         var chart = nv.models.pieChart()
             .x(function(d) { return d.key })
             .y(function(d) { return d.y })
+	    .labelType("percent")
             .width(width)
             .height(height);
 
@@ -75,5 +59,3 @@ the activities listed below for reasons related to your hearing loss or deafness
     });
 
 </script>
-</body>
-</html>
