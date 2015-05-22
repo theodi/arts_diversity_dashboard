@@ -83,7 +83,7 @@ function navigateTo(sel, target, newWindow) {
 		<nav id="pageSelect">Page: <select onchange="navigateTo(this, 'window', false);">
 			{% for p in site.pages %}
 				{% assign current = page.link %}
-				{% assign url = p.url | remove:'/index.html' %}
+				{% assign url = p.url | remove:'.html' %}
 				{% if url == current %}
 				<option selected value="{{ site.url_root }}{{ p.url | remove: 'index.html' }}">{{ p.title }}</option>
 				{% else %}

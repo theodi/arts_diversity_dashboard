@@ -2,7 +2,7 @@
 layout: default
 title: Diversity in DAC
 long_title: Diversity in DAC
-link: /
+link: /index
 weight: 1
 ---
 
